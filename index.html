@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Meaningful Names</title>
+
+    <meta name="description" content="Presentation about MeaningFul Names">
+    <meta name="author" content="Jonathan Cabas">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/sky.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+<section>
+  <h1>Meaningful Names</h1>
+  <br>
+  <h3>What do we need to know & why it matters.</h3>
+  <br>
+  <p>
+    <small>Jonathan Andrés - <a href="http://twitter.com/jcabasc">@jcabasc</a></small>
+  </p>
+</section>
+
+<section data-transition="none">
+  <h2>what does this function do?</h2>
+
+  <img src="imgs/vander_fix.jpg">
+
+  <div class="fragment" style="position: absolute; right: 0%; top: 50%">
+    <img src="imgs/i-see-what-you-did-there.jpg" width="400">
+  </div>
+</section>
+
+<section data-transition="concave">
+  <h2>No, seriously</h2>
+
+  <p>The way the I see, coding is like “writing a book, or an article in the newspaper”, you need to express yourself so good in a way the people would buy it.</p>
+</section>
+
+<section data-transition="concave">
+  <h2>Clean Code</h2>
+
+  <p>That means, you have to be as clear as possible and release something understandable, no matter what language you’re using. You have to deliver clean code.</p>
+</section>
+
+<section data-transition="concave">
+  <h2>Why is important?</h2>
+  <ul>
+    <li>
+      People who read your code will <span style="color:green">understand</span>.
+    <li class="fragment">
+      You will do a favor for yourself later.
+    <li class="fragment">
+      it would be easy to read, maintain or extend.
+  </ul>
+</section>
+
+<section data-transition="slide">
+  <h2>Use Intention-Revealing Names</h2>
+
+  <p>The name of a variable, function, or class, should answer all the big questions. It should tell you why it exists, what it does, and how it is used. If a name requires a comment, then the name does not reveal its intent.</p>
+</section>
+
+<!-- Red background -->
+<section data-background="#d73333" data-state="customevent">
+  <h2>Use Intention-Revealing Names</h2>
+    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+    // what are these?
+    int ca;
+    int ua;
+
+    def get_dau
+      self.order(:created_at).all.map do |item|
+        [item.created_at, item.active_users.to_i]
+      end
+
+    def get_mau
+      self.order(:created_at).all.map do |item|
+        [item.created_at, item.unique_active_users]
+      end
+    end
+    </code></pre>
+</section>
+
+<section data-transition="slide">
+  <h2>Avoid Disinformation</h2>
+  <ul>
+    <li class="fragment" style="font-size: 32px;">
+      Programmers must avoid leaving false clues that obscure the meaning of code.
+    <li class="fragment" style="font-size: 32px;">
+      We should avoid words whose entrenched meanings vary from our intended meaning.
+    <li class="fragment" style="font-size: 32px;">
+      Beware of using names which vary in small ways.
+    <li class="fragment" style="font-size: 32px;">
+      No information at all is better than misleading information.
+  </ul>
+
+  <blockquote class="fragment">
+    &ldquo;Spelling similar concepts similarly is information. Using inconsistent spellings is dis- information.&rdquo;
+  </blockquote>
+</section>
+
+<section data-transition="concave" data-background="#d73333">
+  <h2>Avoid Disinformation</h2>
+    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+      // Long variables
+      ABCModuleForEfficientHandlingOfDates
+      ABCModuleForEfficientStoringOfDates
+
+      customer_array //activeRecord relation
+      quantity_fraction //percentage
+
+      int a = l;
+      if ( O == l )
+       a = O1;
+      else
+       l = 01;
+    </code></pre>
+</section>
+
+<section data-transition="slide">
+  <h2>Make meaningful Distinctions</h2>
+
+  <ul>
+    <li class="fragment" style="font-size: 32px;">
+      Avoid misspelling names to satisfy your code.
+    <li class="fragment" style="font-size: 32px;">
+      Number series are noninformative and noise words are meningless distinctions.
+    <li class="fragment" style="font-size: 32px;">
+      Distinguish names in such a way that the reader knows what the differences offer.
+  </ul>
+</section>
+
+<section data-transition="concave" data-background="#d73333">
+  <h2>Make meaningful Distinctions</h2>
+    <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+      // Noise Words
+      get_active_ccount()
+      get_active_accounts()
+      get_active_account_info()
+
+      def copy_content(a1, a2) {
+        for (int i = 0; i < a1.length; i++) {
+          a2[i] = a1[i]
+        }
+      }
+
+      //indistinguishable
+      customer_info
+      customer_data
+    </code></pre>
+</section>
+
+<section data-transition="slide">
+  <h2>Use Pronounceable Names</h2>
+
+  <p>People are good at words, so take advantage of that. Make your names pronounceable.</p>
+</section>
+
+<section data-transition="slide">
+  <h2>Use Searchable Names</h2>
+
+  <p>Names should be easy to locate across a body of text.</p>
+  <pre><code data-trim contenteditable style="font-size: 26px; margin-top: 20px;">
+  def message
+    MESSAGE if total > 0 &&  percent_with_prices <= 10
+  end
+    </code></pre>
+</section>
+
+<section data-transition="slide">
+  <h2>Avoid Encodings</h2>
+
+  <p>Encoding type or scope information into names simply adds to the burden of deciphering. They are a mental burden, seldom pronounceable and easy to mistype.</p>
+</section>
+
+<section data-transition="slide">
+  <h2>Avoid Mental Mapping</h2>
+  <ul>
+    <li class="fragment" style="font-size: 32px;">
+      Readers should not need to mentally translate your names into other names they already know/are familiar with.
+    <li class="fragment" style="font-size: 32px;">
+      Legendaries <code>i, j, k</code> variable names are really only okay for use as loop counters if their scope is very small and no other names can conflict with them.
+  </ul>
+</section>
+
+<section data-transition="slide">
+  <h2>Class Names</h2>
+
+  <ul>
+    <li class="fragment" style="font-size: 32px;">
+      Classes and objects should have noun or noun-phrase names, like <code>Customer,WikiPage, Account and AddressParser</code>.
+    <li class="fragment" style="font-size: 32px;">
+      But avoid names like <code>Manager, Processor, Data or Info</code> in the name of a class.
+    <li class="fragment" style="font-size: 32px;">
+      A class name should not be a verb.
+  </ul>
+</section>
+
+<section data-transition="slide">
+  <h2>Method Names</h2>
+
+  <p>Methods should have verb or verb-phrase names, like <code>deletePage or save</code>.</p>
+</section>
+
+<section data-transition="slide">
+  <h2>Don’t Be Cute</h2>
+
+  <p>Don’t be too clever or humourous with your names.</p>
+  <p> Name things as what they are.</p>
+</section>
+
+<section data-transition="slide">
+  <h2>Pick One Word per Concept</h2>
+  <ul>
+    <li class="fragment" style="font-size: 40px;">
+      Pick and use one word for abstract concept and stick with it.
+    <li class="fragment" style="font-size: 40px;">
+      A consistent lexicon is a great boon to the programmers who use your code.
+    <li class="fragment" style="font-size: 40px;">
+      ie: <code>user.fetch, plan.get, account.retrieve</code>.
+  </ul>
+</section>
+
+<section data-transition="slide">
+  <h2>Don’t Pun</h2>
+
+  <p>Don’t deliberately or inadvertently re-use the same term where its semantic meaning in the code is different.</p>
+</section>
+
+<section data-transition="slide">
+  <h2>Use Solution Domain Names</h2>
+
+  <p>The people who read you code are programmers, so go ahead and use solution domain terms, such as <code>AccountObserver</code>, where <code>Observer</code> means the Observer pattern.</p>
+</section>
+
+<section data-transition="slide">
+  <h2>Use Problem Domain Names</h2>
+<p>To make code more understandable to anyone involved in solving a problem, it is better to use meaningful names in a domain context.</p>
+<p class="fragment">That means, use business language.</p>
+</section>
+
+<section data-transition="slide">
+  <h2>Add meaningful Context</h2>
+  <p>Apart from the element name in code, there is always some context that the name is used within. The context is very important to understand a name, because it has additional information.</p>
+</section>
+
+<section data-transition="slide">
+  <h2>Don’t Add Gratuitous Context</h2>
+  <ul>
+    <li class="fragment" style="font-size: 40px;">
+      Shorter names are generally better than longer ones, so long as they are clear.
+    <li class="fragment" style="font-size: 40px;">
+      Add no more context to a name than is necessary.
+  </ul>
+</section>
+
+<section>
+  <h2>El Fin</h2>
+
+  <img src="imgs/responsibility.png"><br>
+  <a target="_blank" href="https://twitter.com/jcabasc">@jcabasc</a>
+  -
+  <a target="_blank" href="https://github.com/jcabas">github.com/jcabas</a>
+</section>
+
+      </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Parallax scrolling
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+    </script>
+
+  </body>
+</html>
