@@ -55,6 +55,18 @@
   <div class="fragment" style="position: absolute; right: 0%; top: 50%">
     <img src="imgs/i-see-what-you-did-there.jpg" width="400">
   </div>
+  <aside class="notes">
+    Questioning the audience
+    <ol>
+      <li>
+        What do you guys think, it does this method?
+      <li>
+        What means that array?
+      <li>
+        Are they ids or maybe just random numbers?
+       <li> 
+        What about that result hash, what is its purpose?
+  </aside>
 </section>
 
 <section data-transition="concave">
@@ -79,6 +91,13 @@
     <li class="fragment">
       it would be easy to read, maintain or extend.
   </ul>
+  <aside class="notes">
+    <ul>
+      <li>
+        If you're in a team with a bunch of people coding over the same code and at the same time, you will no regret of doing this.
+      <li>
+        In the near future you can forget what does a certain thing.
+  </aside>
 </section>
 
 <section data-transition="slide">
@@ -111,9 +130,9 @@
 <section data-transition="slide">
   <h2>Avoid Disinformation</h2>
   <ul>
-    <li class="fragment" style="font-size: 32px;">
+    <li style="font-size: 32px;">
       Programmers must avoid leaving false clues that obscure the meaning of code.
-    <li class="fragment" style="font-size: 32px;">
+    <li style="font-size: 32px;">
       We should avoid words whose entrenched meanings vary from our intended meaning.
     <li class="fragment" style="font-size: 32px;">
       Beware of using names which vary in small ways.
@@ -124,6 +143,10 @@
   <blockquote class="fragment">
     &ldquo;Spelling similar concepts similarly is information. Using inconsistent spellings is dis- information.&rdquo;
   </blockquote>
+    <aside class="notes">
+      <p> There is no need to call a variable customerArray if it's an active relation object.
+      <p> A good name contains as many words as are needed to express a concept. But nothing more. Any unnecessary words make the name longer and harder to understand. Short names are good only when they describe the whole concept in the current context (it is better to say “customersInOrder” than “list” in a context of making an order).
+    </aside>
 </section>
 
 <section data-transition="concave" data-background="#d73333">
@@ -133,8 +156,8 @@
       ABCModuleForEfficientHandlingOfDates
       ABCModuleForEfficientStoringOfDates
 
-      customer_array //activeRecord relation
-      quantity_fraction //percentage
+      customerList // hash
+      quantity //percentage
 
       int a = l;
       if ( O == l )
@@ -142,6 +165,9 @@
       else
        l = 01;
     </code></pre>
+    <aside class="notes">
+      <p> it's unlikely that this happens, but in this situation it's indistinguishable zero (0) from uppercase (O) and one (1) from lower-case (l).
+    </aside>
 </section>
 
 <section data-transition="slide">
@@ -155,14 +181,17 @@
     <li class="fragment" style="font-size: 32px;">
       Distinguish names in such a way that the reader knows what the differences offer.
   </ul>
+  <aside class="notes">
+    <p> For instance if you call a variable member2 because you already have another one call it member1.
+    <p> For instance if you have a class named Product, and create two more classes ProductInfo and ProductData. You have made the names different without making them mean anything different.
+  </aside>
 </section>
 
 <section data-transition="concave" data-background="#d73333">
   <h2>Make meaningful Distinctions</h2>
     <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
-      // Noise Words
+      //
       get_active_ccount()
-      get_active_accounts()
       get_active_account_info()
 
       def copy_content(a1, a2) {
@@ -171,16 +200,24 @@
         }
       }
 
-      //indistinguishable
-      customer_info
-      customer_data
+      Class CustomerInfo
+      end
+      Class CustomerData
+      end
     </code></pre>
+    <aside class="notes">
+      <p> How we supposed to know which of these functions to call?
+      <p> In the secod example, this function reads much better when source and destination are used for the argument names.
+    </aside>
 </section>
 
 <section data-transition="slide">
   <h2>Use Pronounceable Names</h2>
 
   <p>People are good at words, so take advantage of that. Make your names pronounceable.</p>
+  <aside class="notes">
+    <p> Need no explanation.
+  </aside>
 </section>
 
 <section data-transition="slide">
@@ -192,12 +229,19 @@
     MESSAGE if total > 0 &&  percent_with_prices <= 10
   end
     </code></pre>
+  <aside class="notes">
+    <p> Single-letter names and numeric constants have a particular problem in that they are not easy to locate across a body of text.
+    <p> Single-letter names can ONLY be used as local variables inside short methods.
+  </aside>
 </section>
 
 <section data-transition="slide">
   <h2>Avoid Encodings</h2>
 
   <p>Encoding type or scope information into names simply adds to the burden of deciphering. They are a mental burden, seldom pronounceable and easy to mistype.</p>
+  <aside class="notes">
+    <p> Need no explanation.
+  </aside>
 </section>
 
 <section data-transition="slide">
@@ -208,6 +252,11 @@
     <li class="fragment" style="font-size: 32px;">
       Legendaries <code>i, j, k</code> variable names are really only okay for use as loop counters if their scope is very small and no other names can conflict with them.
   </ul>
+  <aside class="notes">
+    <p> This problem generally arises from a choice to use NEITHER problem domain terms nor solution-domain terms.
+    <p> There is no need to call a variable for its synonyms or something you think is similar within a context.
+    <p> For instance if you're working in a healthcare software, and there are patients and doctors, but you decide to call them users within a scope.
+  </aside>
 </section>
 
 <section data-transition="slide">
@@ -221,12 +270,18 @@
     <li class="fragment" style="font-size: 32px;">
       A class name should not be a verb.
   </ul>
+  <aside class="notes">
+    <p> Self-explnatory.
+  </aside>
 </section>
 
 <section data-transition="slide">
   <h2>Method Names</h2>
 
   <p>Methods should have verb or verb-phrase names, like <code>deletePage or save</code>.</p>
+  <aside class="notes">
+    <p> This apply for public methods. There are exceptions when you could call private methods by a word that represent the name of the object that return (Personal opinion).
+  </aside>
 </section>
 
 <section data-transition="slide">
@@ -234,6 +289,9 @@
 
   <p>Don’t be too clever or humourous with your names.</p>
   <p> Name things as what they are.</p>
+  <aside class="notes">
+    <p> Self-explnatory. In spanish "No inventes". Don't you remember the vander_fix method.
+  </aside>
 </section>
 
 <section data-transition="slide">
@@ -242,33 +300,52 @@
     <li class="fragment" style="font-size: 40px;">
       Pick and use one word for abstract concept and stick with it.
     <li class="fragment" style="font-size: 40px;">
-      A consistent lexicon is a great boon to the programmers who use your code.
+      A consistent lexicon is a great boon (helpful) to the programmers who use your code.
     <li class="fragment" style="font-size: 40px;">
-      ie: <code>user.fetch, plan.get, account.retrieve</code>.
+      ie: Do you think these methods <code>fetch, get and retrieve</code> could be equivalent in different classes?
   </ul>
+  <aside class="notes">
+    <p> For instance if you're retrieving attributes from an API in a User class, you should not call it any different in another one when you're doing the same thing.
+  </aside>
 </section>
 
 <section data-transition="slide">
   <h2>Don’t Pun</h2>
 
-  <p>Don’t deliberately or inadvertently re-use the same term where its semantic meaning in the code is different.</p>
+  <p>Avoid using the same word for two purposes. Using the same term for two different ideas is essentially a pun.<p>
+  <aside class="notes">
+    <p> For example using the term add in several classes, for “consistency”, when you are in fact not using it in the same sense. Adding an element to an array or concatenating two values.
+  </aside>
 </section>
 
 <section data-transition="slide">
   <h2>Use Solution Domain Names</h2>
 
-  <p>The people who read you code are programmers, so go ahead and use solution domain terms, such as <code>AccountObserver</code>, where <code>Observer</code> means the Observer pattern.</p>
+  <p>The people who read you code are programmers, so go ahead and use computer science terms, algorithm names, pattern names, math terms, and so forth, such as <code>AccountObserver</code>, where <code>Observer</code> means the Observer pattern.</p>
+  <aside class="notes">
+    <p>
+      If the reader is familiar with the concept, might clarify to him what is its purpose.
+  </aside>
 </section>
 
 <section data-transition="slide">
   <h2>Use Problem Domain Names</h2>
 <p>To make code more understandable to anyone involved in solving a problem, it is better to use meaningful names in a domain context.</p>
 <p class="fragment">That means, use business language.</p>
+<aside class="notes">
+  <p> All code that programmers write is connected to some domain logic.
+  <p> In the future somebody else (not only a programmer, maybe a tester) will use your code and will be able to easily understand it in a domain context (with business logic knowledge).
+</aside>
 </section>
 
 <section data-transition="slide">
   <h2>Add meaningful Context</h2>
-  <p>Apart from the element name in code, there is always some context that the name is used within. The context is very important to understand a name, because it has additional information.</p>
+  <p>The context is very important to understand a name, because it has additional information.</p>
+  <p> You can add context to names by using prefixes or enclosing them in well-named classes, functions, or namespaces.
+  <aside class="notes">
+    <p> Imagine that you have variables named city, state, and zipcode. Taken together it’s pretty clear that they form an address. But what if you just saw the state variable being used alone in a method? Would you automatically infer that it was part of an address?
+    <p> You can add context by using prefixes: addrCity, addrState, addrZipcode or by creating a class named Address.
+  </aside>
 </section>
 
 <section data-transition="slide">
@@ -279,8 +356,10 @@
     <li class="fragment" style="font-size: 40px;">
       Add no more context to a name than is necessary.
   </ul>
+  <aside class="notes">
+    <p> A good name contains as many words as are needed to express a concept. But nothing more. Any unnecessary words make the name longer and harder to understand.
+  </aside>
 </section>
-
 <section>
   <h2>El Fin</h2>
 
